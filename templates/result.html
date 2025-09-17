@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Result</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .container { max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        .result-fake { color: red; }
+        .result-real { color: green; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Result</h1>
+        <h2 class="result-{{ prediction.lower() }}">
+            Prediction: {{ prediction }}
+        </h2>
+        <h3>Confidence: {{ confidence }}%</h3>
+        <br>
+        <a href="/">Analyze Another Video</a>
+    </div>
+</body>
+</html>
