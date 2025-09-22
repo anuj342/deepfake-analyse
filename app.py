@@ -6,12 +6,12 @@ import tensorflow as tf
 from flask import Flask, request, render_template, url_for, redirect
 from werkzeug.utils import secure_filename
 
-# --- INITIALIZATION ---
+#initialization
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB upload limit
 
-# --- LOAD THE TRAINED MODEL AND FACE DETECTOR ---
+#LOAD THE TRAINED MODEL AND FACE DETECTOR
 # Load them once at the start to save time on each request.
 print("Loading deepfake detection model...")
 model = tf.keras.models.load_model('deepfake_detector_model.h5')
@@ -83,7 +83,7 @@ def analyze_video(video_path):
     return verdict, f"{confidence:.2f}"
 
 
-# --- FLASK ROUTES ---
+# FLASK ROUTES 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
